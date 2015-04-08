@@ -13,12 +13,18 @@
                 <Li data-type="column" class="selected">柱图</Li>
             </ul>
             <p>
-                Volume&nbsp;<input type="range" id="volume" min="0" max="100" value="50"/>
+                Volume&nbsp;<input type="range" id="volume" min="0" max="100" value="20"/>
+                <button id ="start" >Start</button>
+                <label class="time" id="playedTime"></label><input type="range" id="progress" min="0" max="150" value="0"/><label class="time" id="wholeTime"></label>
             </p>
         </header>
   <div class="left">
+      <a href="javascript:void(0);" id="list-title">Local Music List</a>
+      <button class="music-add" id="add">
+          More
+      </button>
+      <input class="upload" type="file" id="upload" />
       <ul id="list">
-
           <%music.forEach(function(name){%>
                       <li title = "<%=name%>"><%=name%></li>
                   <%})%>
@@ -27,7 +33,7 @@
   <div class="right">
       <canvas id="canvas"></canvas>
   </div>
-
+        <script type="text/javascript" src="javascripts/MusicVisualizer.js"></script>
         <script type="text/javascript" src="javascripts/index.js"></script>
   </body>
 </html>

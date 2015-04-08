@@ -41,7 +41,7 @@ header h1 {
 header ul {
     list-style: none;
     display: inline-block;
-    margin: 0 auto;
+    margin: 10px auto;
 
 }
 
@@ -68,6 +68,20 @@ header ul li:last-child {
 header ul li.selected {
     background-color: #ffffff;
     color: #000000;
+}
+
+header p button#start {
+    width: 50px;
+    margin-left: 50px;
+    border-radius: 5px;
+    outline: none;
+}
+
+header p label.time{
+    display: inline-block;
+    width: 50px;
+    font: 10px ;
+    color: yellowgreen;
 }
 
 input[type = "range"] {
@@ -111,8 +125,30 @@ input[type = "range"]::-moz-range-thumb {
     width: 15%;
     border: solid #fff 1px;
     overflow: auto;
-}
 
+}
+.left a{
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    margin: 10px auto;
+
+    color: #fff;
+
+}
+.left button{
+    float: right;
+    margin: 10px;
+    background-color: AliceBlue;
+    color: #000;
+    outline: none;
+}
+.left input.upload{
+    display: none;
+}
+.left ul{
+    clear: both;
+}
 .left ul li {
     height: 30px;
     line-height: 30px;
@@ -133,9 +169,9 @@ input[type = "range"]::-moz-range-thumb {
     top: 160px;
     right: 10px;
     bottom: 10px;
-    left: calc(15% + 10px);
     left: -webkit-calc(15% + 10px);
-    /*border: solid #fff 1px;*/
+    left: -moz-calc(15% + 10px);
+    left: calc(15% + 10px);
 }
 
 @media screen and (max-width: 800px), screen and (max-height: 500px) {
@@ -152,7 +188,7 @@ input[type = "range"]::-moz-range-thumb {
     }
 
     header ul li {
-        font-size: 14px;
+        font-size: 12px;
         height: 16px;
         line-height: 16px;
         width: 40px;
