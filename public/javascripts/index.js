@@ -53,7 +53,7 @@ for (var i = 0; i < lis.length; i++) {
         var self = this;
         //mv.load("/media/" + this.title);
         $("#start")[0].textContent = mv.musicStatus == true ? "Pause" : "Play";    //歌曲即将播放，改变播放按钮的显示文字
-        mv.play("/media/" + self.title);            //调用MusicVisualizer的play方法
+        mv.play("../media/" + self.title);            //调用MusicVisualizer的play方法
     };
 };
 

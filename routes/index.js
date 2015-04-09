@@ -6,8 +6,8 @@ var media = path.join(__dirname,"../public/media");
 router.get('/', function(req, res, next) {
     var fs = require("fs");
     fs.readdir(media,function(err,names){
-        if(err){
-            console.log(err);
+                if(err){
+                    console.log(err);
         }else{
             res.render('index',{title:'My music',music:names});
         }
