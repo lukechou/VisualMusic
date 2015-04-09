@@ -12,7 +12,7 @@ body {
 
 body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    background: #000;
+    background: DarkCyan;
     color: #fff;
     text-align: center;
 }
@@ -70,11 +70,50 @@ header ul li.selected {
     color: #000000;
 }
 
+/*
+对切换背景的ol设置样式
+*/
+header ol.background{
+    list-style: none;
+    display: inline-block;
+    margin-right: 10px;
+    float: right;
+}
+
+header ol.background li{
+    float: right;
+    height: 20px;
+    line-height: 20px;
+    width: 40px;
+    border: 1px solid #ffffff;
+    text-align: center;
+}
+header ol.background li#black{
+    background-color: #000000;
+}
+header ol.background li#gray{
+    background-color: gray;
+}
+header ol.background li#DarkCyan{
+    background-color: DarkCyan;
+}
+
+header ol.background li:first-child{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+header ol.background li:last-child{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
 header p button#start {
     width: 50px;
     margin-left: 50px;
     border-radius: 5px;
     outline: none;
+    background-color: #ffffff;
 }
 
 header p label.time{
@@ -139,7 +178,7 @@ input[type = "range"]::-moz-range-thumb {
 .left button{
     float: right;
     margin: 10px;
-    background-color: AliceBlue;
+    background-color: #ffffff;
     color: #000;
     outline: none;
 }
@@ -193,6 +232,12 @@ input[type = "range"]::-moz-range-thumb {
         line-height: 16px;
         width: 40px;
 
+    }
+
+    header ol.background li {
+        height: 12px;
+        line-height: 12px;
+        width: 20px;
     }
 
     body {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <meta charset="utf-8">
+      <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/index.css' />
 
@@ -13,11 +13,18 @@
                 <li data-type="dot" class="selected">点图</li>
                 <Li data-type="column">柱图</Li>
             </ul>
+
             <p>
                 Volume&nbsp;<input type="range" id="volume" min="0" max="100" value="20"/>
                 <button id ="start" >Start</button>
                 <label class="time" id="playedTime"></label><input type="range" id="progress" min="0" max="150" value="0"/><label class="time" id="wholeTime"></label>
+
             </p>
+            <ol class="background" id="background">
+                <li data-type="black" id="black"></li>
+                <li data-type="gray" id="gray"></li>
+                <Li data-type="DarkCyan" id="DarkCyan"></Li>
+            </ol>
         </header>
   <div class="left">
       <a href="javascript:void(0);" id="list-title">Local Music List</a>

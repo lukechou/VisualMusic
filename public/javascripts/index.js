@@ -14,6 +14,7 @@ var startButton = $("#start")[0];
 var playedTimeLable = $("#playedTime")[0];      //显示已播放时长的标签
 var wholeTimeLable = $("#wholeTime")[0];        //显示歌曲总时长的标签
 var progressBar = $("#progress")[0];            //歌曲进度条
+var backgroundOl = $("#background li");         //切换背景的ol列表
 var rightDiv = $(".right")[0];          //右边用于作画的区域
 var canvas = $("#canvas")[0];           //作画的canvas
 var canCxt = canvas.getContext('2d');
@@ -41,7 +42,7 @@ var mv = new MusicVisualizer({
     startButton :startButton
 });
 
-var i,j;   //用于循坏的全局变量
+var i, j,k;   //用于循坏的全局变量
 /**
  * 给歌曲列表的每首歌，绑定单击事件
  * 点击后，开始播放歌曲
@@ -58,6 +59,14 @@ for (var i = 0; i < lis.length; i++) {
         mv.play("../media/" + self.title);            //调用MusicVisualizer的play方法
     };
 };
+
+for(var k = 0; k < backgroundOl.length; k ++){
+    backgroundOl[k].onclick = function(){
+        var color = this.getAttribute("data-type");
+        console.log(color);
+        document.body.style.background = color ;
+    }
+}
 
 /**
  * 右边图形区域，点击切换运动状态
@@ -153,9 +162,9 @@ function resize() {
     canvas.height = height;
 
     lineGra = canCxt.createLinearGradient(0, 0, 0, height);
-    lineGra.addColorStop(0, "red");
+    lineGra.addColorStop(0, "IndianRed");
     lineGra.addColorStop(0.7, "green");
-    lineGra.addColorStop(1, "yellow");
+    lineGra.addColorStop(1, "Indigo");
 
     //canCxt.fillStyle = lineGra;
 
