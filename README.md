@@ -12,5 +12,4 @@
 
     The main JS files' url are public/javascripts/,including the MusicVisualizer.js and index.js. They made the function of playing music and drawing kinds of animation become true.
 
-    The main audio files are restored in public/media,which means the songs you can see on the list of page's left.
-
+    The main audio files are restored in public/media,which means the songs you can see on the list of page's left.Thanks.
