@@ -8,6 +8,7 @@ function MusicVisualizer(obj) {
     this.progressBar = obj.progressBar;             //进度条
     this.playedTimeLable = obj.playedTimeLable;     //已播放时长的标签
     this.wholeTimeLable = obj.wholeTimeLable;       //总时长的标签
+    this.startButton = obj.startButton;
     //console.log(this.playedTimeLable+"\\"+this.wholeTimeLable);
 
     this.musicStatus = false;        //歌曲是否正在播放，true为播放
@@ -76,6 +77,9 @@ MusicVisualizer.prototype.play = function (url) {
     var n = ++this.count;       //避免切歌后，以前的歌还会播放
     var self = this;
     self.source && self.source[self.source.stop ? "stop" : "noteOff"](0); //如果还存在歌曲资源，应该停止
+    self.musicStatus = false;                   //避免进度条的已播放时间还在增加
+    self.startButton.textContent = "Pause";     //更改播放按钮的文字
+
     if(url instanceof ArrayBuffer){             //url是ArrayBuffer类型，表示是从本地读取的音频资源
         var arraybuffer = url;
         if (n != self.count) return;
@@ -135,6 +139,7 @@ MusicVisualizer.prototype.play = function (url) {
             });
         });
     }
+
 
 };
 /**

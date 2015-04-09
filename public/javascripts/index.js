@@ -10,6 +10,7 @@ function $(s) {
 
 var size = 32;  //实时获取的音频频域数据，也是柱状图的个数
 
+var startButton = $("#start")[0];
 var playedTimeLable = $("#playedTime")[0];      //显示已播放时长的标签
 var wholeTimeLable = $("#wholeTime")[0];        //显示歌曲总时长的标签
 var progressBar = $("#progress")[0];            //歌曲进度条
@@ -24,7 +25,7 @@ var dot_move = true;    //圆形是否运动，true表示运动
 var lineGra;            //绘图的线性渐变
 var lis = $("#list li");    //左边歌曲列表
 
-draw.type = "column";   //绘制图形的种类
+draw.type = "dot";   //绘制图形的种类
 var types = $("#type li"); //切换图形种类的元素
 
 /**
@@ -36,7 +37,8 @@ var mv = new MusicVisualizer({
     draw : draw,
     progressBar: progressBar,
     playedTimeLable : playedTimeLable,
-    wholeTimeLable : wholeTimeLable
+    wholeTimeLable : wholeTimeLable,
+    startButton :startButton
 });
 
 var i,j;   //用于循坏的全局变量
@@ -52,7 +54,7 @@ for (var i = 0; i < lis.length; i++) {
         this.className = "selected";
         var self = this;
         //mv.load("/media/" + this.title);
-        $("#start")[0].textContent = mv.musicStatus == true ? "Pause" : "Play";    //歌曲即将播放，改变播放按钮的显示文字
+        startButton.textContent = mv.musicStatus == true ? "Pause" : "Play";    //歌曲即将播放，改变播放按钮的显示文字
         mv.play("../media/" + self.title);            //调用MusicVisualizer的play方法
     };
 };
